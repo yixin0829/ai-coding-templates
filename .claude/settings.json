@@ -1,0 +1,43 @@
+{
+  "hooks": {
+    // Available Hook Events: https://docs.claude.com/en/docs/claude-code/hooks#hook-events
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+
+            // For Windows Powershell
+            "command": "powershell -Command \"Import-Module BurntToast; New-BurntToastNotification -Text 'Claude Code awaiting your input' -Sound 'Default' -AppLogo 'C:\\Users\\yixin\\OneDrive\\Pictures\\Icons\\claude.png'\""
+
+            // For Linux
+            // "command": "notify-send 'Claude Code' 'Awaiting your input'"
+
+            // For MacOS
+            // "command": "afplay /System/Library/Sounds/Funk.aiff"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+
+            // For Windows Powershell
+            "command": "powershell -Command \"Import-Module BurntToast; New-BurntToastNotification -Text 'Claude Code finished' -Sound 'Mail' -AppLogo 'C:\\Users\\yixin\\OneDrive\\Pictures\\Icons\\claude.png'\""
+
+            // For Linux
+            // "command": "notify-send 'Claude Code' 'Claude Code finished'"
+
+            // For MacOS
+            // "command": "afplay /System/Library/Sounds/Funk.aiff"
+          }
+        ]
+      }
+    ]
+  }
+}
